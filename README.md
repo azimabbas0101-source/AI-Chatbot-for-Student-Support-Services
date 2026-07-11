@@ -1,31 +1,57 @@
 # AI Chatbot for Student Support Services
 
-## Project Overview
+## Overview
 
-AI Chatbot for Student Support Services is a web-based chatbot developed using Python and Streamlit. It helps students by answering common queries related to admissions, fees, examinations, library, hostel, placements, and scholarships.
+AI Chatbot for Student Support Services is a web-based application developed using Python and Streamlit. The chatbot helps students by answering common queries related to admissions, fees, examinations, library, hostel, placements, and scholarships.
+
+## Objectives
+
+- Provide instant support to students.
+- Reduce repetitive queries.
+- Improve access to college-related information.
+- Demonstrate the use of Artificial Intelligence in student support.
 
 ## Features
 
-- Admission Support
-- Fee Information
-- Examination Queries
+- Admission Information
+- Fee Details
+- Examination Support
 - Library Information
-- Hostel Support
+- Hostel Queries
 - Placement Guidance
 - Scholarship Information
-- Easy-to-use Interface
+- User-Friendly Interface
 
 ## Technologies Used
 
 - Python
 - Streamlit
-- Google Gemini AI (Coming Soon)
+- Google Gemini AI (to be integrated)
 - GitHub
 
-## Project Developer
+## Project Structure
 
-Azim Abbas
+```
+AI-Chatbot-for-Student-Support-Services/
+│── app.py
+│── requirements.txt
+│── README.md
+```
 
-## Project Status
+## Future Improvements
 
-Under Development
+- Google Gemini AI Integration
+- Voice Support
+- Student Login
+- Chat History
+- Database Integration
+
+## Developer
+
+**Azim Abbas**
+
+MBA Student
+
+## Status
+
+Project Under Development
