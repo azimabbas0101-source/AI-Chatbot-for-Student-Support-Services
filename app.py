@@ -1,32 +1,54 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="AI Student Support Chatbot",
+    page_title="AI Chatbot for Student Support Services",
     page_icon="🎓",
     layout="centered"
 )
 
-st.title("🎓 AI Student Support Chatbot")
+st.title("🎓 AI Chatbot for Student Support Services")
 
-st.write("Welcome to the AI Student Support Chatbot.")
-
-st.write("This chatbot will help students with:")
+st.write("""
+Welcome! This chatbot helps students with common college-related queries.
+""")
 
 st.markdown("""
-- 📚 Admission
+### Select a Topic
+
+- 🎓 Admission
 - 💰 Fees
 - 📝 Examination
+- 📚 Library
 - 🏠 Hostel
-- 📖 Library
 - 💼 Placements
-- 🎓 Scholarships
+- 🎁 Scholarships
 """)
 
 question = st.text_input("Ask your question:")
 
-if st.button("Submit"):
-    if question == "":
-        st.warning("Please enter a question.")
+if question:
+    q = question.lower()
+
+    if "admission" in q:
+        st.success("Admission starts every academic session. Visit the admission office or college website for details.")
+
+    elif "fee" in q or "fees" in q:
+        st.success("You can pay fees online or at the accounts office. Contact the accounts department for exact details.")
+
+    elif "exam" in q:
+        st.success("The examination schedule is announced by the university before each semester.")
+
+    elif "library" in q:
+        st.success("The library provides books, journals and digital resources for students.")
+
+    elif "hostel" in q:
+        st.success("Hostel facilities are available. Contact the hostel office for room availability.")
+
+    elif "placement" in q:
+        st.success("The Training & Placement Cell organizes placement drives, internships and career guidance.")
+
+    elif "scholarship" in q:
+        st.success("Eligible students can apply for government and institutional scholarships.")
+
     else:
-        st.success("Your question has been received.")
-        st.write("AI response will be added in the next step.")
+        st.info("Sorry, I don't have an answer for that question yet.")
