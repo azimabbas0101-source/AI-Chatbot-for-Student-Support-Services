@@ -27,14 +27,18 @@ st.markdown("""
 """)
 
 question = st.text_input("Ask your question:")
+
 api_key = os.getenv("GEMINI_API_KEY")
 
 if api_key:
     model = setup_gemini(api_key)
 
-if question:
-    if api_key:
-        response = get_response(model, question)
-        st.success(response)
-    else:
-        st.error("Gemini API key not found.")
+    if question:
+        try:
+            response = get_response(model, question)
+            st.success(response)
+        except Exception as e:
+            st.error(f"Error: {e}")
+
+else:
+    st.error("Gemini API key not found. Please add it in Streamlit Secrets.")
