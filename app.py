@@ -34,9 +34,7 @@ if api_key:
 
 if question:
     if api_key:
-    response = get_response(model, question)
-    st.success(response)
-else:
-    st.error("Gemini API key not found.")
+        response = get_response(model, question)
+        st.success(response)
     else:
-        st.info("Sorry, I don't have an answer for that question yet.")
+        st.error("Gemini API key not found.")
