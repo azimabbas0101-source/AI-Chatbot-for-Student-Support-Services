@@ -1,9 +1,12 @@
-import google.generativeai as genai
+from google import genai
 
 def setup_gemini(api_key):
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel("gemini-2.0-flash")
+    client = genai.Client(api_key=api_key)
+    return client
 
-def get_response(model, question):
-    response = model.generate_content(question)
+def get_response(client, question):
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=question,
+    )
     return response.text
