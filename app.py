@@ -10,35 +10,21 @@ st.set_page_config(
 
 st.title("🎓 AI Chatbot for Student Support Services")
 
-st.write("""
-Welcome! This chatbot helps students with common college-related queries.
-""")
-
-st.markdown("""
-### Select a Topic
-
-- 🎓 Admission
-- 💰 Fees
-- 📝 Examination
-- 📚 Library
-- 🏠 Hostel
-- 💼 Placements
-- 🎁 Scholarships
-""")
+st.write(
+    "Welcome! Ask any question related to admissions, fees, examinations, library, hostel, placements, scholarships, or any student-related topic."
+)
 
 question = st.text_input("Ask your question:")
 
 api_key = os.getenv("GEMINI_API_KEY")
 
-if api_key:
-    model = setup_gemini(api_key)
-
-    if question:
+if question:
+    if api_key:
         try:
-            response = get_response(model, question)
-            st.success(response)
+            client = setup_gemini(api_key)
+            answer = get_response(client, question)
+            st.success(answer)
         except Exception as e:
             st.error(f"Error: {e}")
-
-else:
-    st.error("Gemini API key not found. Please add it in Streamlit Secrets.")
+    else:
+        st.error("Gemini API key not found.")
