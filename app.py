@@ -9,10 +9,30 @@ st.set_page_config(
     layout="centered"
 )
 
+# Sidebar
+st.sidebar.title("🎓 Student Support")
+
+st.sidebar.markdown("""
+### 📌 Available Services
+
+- 📝 Admissions
+- 💰 Fees
+- 📖 Examination
+- 📚 Library
+- 🏠 Hostel
+- 💼 Placements
+- 🎓 Scholarships
+
+---
+
+### ℹ️ About
+
+This AI chatbot helps students by answering questions related to student support services.
+""")
+
 # Title
 st.title("🎓 AI Chatbot for Student Support Services")
 
-# Description
 st.write(
     "Welcome! Ask any question related to admissions, fees, examinations, library, hostel, placements, scholarships, or any student-related topic."
 )
@@ -21,13 +41,13 @@ st.write(
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display previous messages
+# Show previous chat
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# User Input
-question = st.chat_input("Ask your question:")
+# User input (Bottom)
+question = st.chat_input("Ask your question...")
 
 # Read API Key
 api_key = os.getenv("GEMINI_API_KEY")
@@ -44,10 +64,9 @@ if question:
 
     if api_key:
         try:
-            # Connect Gemini
             client = setup_gemini(api_key)
 
-            # Loading Animation
+            # Loading animation
             with st.spinner("🤖 Thinking..."):
                 answer = get_response(client, question)
 
