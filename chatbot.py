@@ -7,23 +7,39 @@ def setup_gemini(api_key):
 
 def get_response(client, question):
 
+    # Student Support Topics
     allowed_topics = [
-        "admission", "admissions", "fee", "fees",
-        "exam", "examination", "library", "hostel",
-        "placement", "placements", "scholarship",
-        "scholarships", "college", "student",
-        "course", "courses", "education",
-        "mba", "bba", "bca", "b.tech", "university",
-        "semester", "syllabus", "faculty", "campus"
+        "admission", "admissions",
+        "fee", "fees",
+        "exam", "examination", "result",
+        "library",
+        "hostel",
+        "placement", "placements",
+        "scholarship", "scholarships",
+        "student", "students",
+        "college", "university",
+        "course", "courses",
+        "education", "academic", "academics",
+        "mba", "bba", "bca", "b.tech",
+        "semester", "faculty", "campus",
+        "syllabus", "attendance", "internship"
     ]
 
-    if not any(word in question.lower() for word in allowed_topics):
+    # Check if question is related to student support
+    is_allowed = False
+
+    for topic in allowed_topics:
+        if topic in question.lower():
+            is_allowed = True
+            break
+
+    if not is_allowed:
         return (
-            "🎓 I'm an AI Student Support Chatbot.\n\n"
+            "🎓 I am an AI Student Support Chatbot.\n\n"
             "Please ask questions related to:\n"
             "• Admissions\n"
             "• Fees\n"
-            "• Examinations\n"
+            "• Examination\n"
             "• Library\n"
             "• Hostel\n"
             "• Placements\n"
@@ -32,6 +48,7 @@ def get_response(client, question):
             "• Student Services"
         )
 
+    # Generate AI Response
     response = client.models.generate_content(
         model="gemini-3.5-flash",
         contents=question
