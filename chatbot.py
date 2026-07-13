@@ -6,7 +6,7 @@ def setup_gemini(api_key):
 
 def get_response(client, question):
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
-        contents=question,
+        model="gemini-3.5-flash",
+        contents=question
     )
     return response.text
