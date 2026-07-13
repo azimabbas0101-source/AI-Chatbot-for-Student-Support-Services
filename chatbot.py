@@ -1,8 +1,10 @@
 from google import genai
 import time
 
+
 def setup_gemini(api_key):
     return genai.Client(api_key=api_key)
+
 
 def get_response(client, question):
 
