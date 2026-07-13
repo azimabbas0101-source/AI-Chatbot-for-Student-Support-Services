@@ -1,17 +1,15 @@
-from google import genai
+ from google import genai
+import time
 
 def setup_gemini(api_key):
-    client = genai.Client(api_key=api_key)
-    return client
-
+    return genai.Client(api_key=api_key)
 
 def get_response(client, question):
 
-    # Student Support Topics
     allowed_topics = [
         "admission", "admissions",
         "fee", "fees",
-        "exam", "examination", "result",
+        "exam", "examination",
         "library",
         "hostel",
         "placement", "placements",
@@ -25,33 +23,26 @@ def get_response(client, question):
         "syllabus", "attendance", "internship"
     ]
 
-    # Check if question is related to student support
-    is_allowed = False
+    question_lower = question.lower()
 
-    for topic in allowed_topics:
-        if topic in question.lower():
-            is_allowed = True
-            break
-
-    if not is_allowed:
+    if not any(topic in question_lower for topic in allowed_topics):
         return (
             "🎓 I am an AI Student Support Chatbot.\n\n"
-            "Please ask questions related to:\n"
-            "• Admissions\n"
-            "• Fees\n"
-            "• Examination\n"
-            "• Library\n"
-            "• Hostel\n"
-            "• Placements\n"
-            "• Scholarships\n"
-            "• Courses\n"
-            "• Student Services"
+            "Please ask questions related to admissions, fees, examinations, library, hostel, placements, scholarships, courses or other student services."
         )
 
-    # Generate AI Response
-    response = client.models.generate_content(
-        model="gemini-3.5-flash",
-        contents=question
-    )
+    for _ in range(3):
+        try:
+            response = client.models.generate_content(
+                model="gemini-3.5-flash",
+                contents=question
+            )
+            return response.text
 
-    return response.text
+        except Exception as e:
+            if "503" in str(e):
+                time.sleep(3)
+                continue
+            raise
+
+    return "⚠️ Gemini is currently busy. Please try again after a few moments."
