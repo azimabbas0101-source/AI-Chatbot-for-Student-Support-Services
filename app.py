@@ -27,7 +27,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # User Input
-question = st.text_input("Ask your question:")
+question = st.chat_input("Ask your question:")
 
 # Read API Key
 api_key = os.getenv("GEMINI_API_KEY")
