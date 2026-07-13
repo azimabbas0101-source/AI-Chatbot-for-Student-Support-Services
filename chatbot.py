@@ -7,39 +7,34 @@ def setup_gemini(api_key):
 
 def get_response(client, question):
 
-    prompt = f"""
-You are an AI Chatbot for Student Support Services.
+    allowed_topics = [
+        "admission", "admissions", "fee", "fees",
+        "exam", "examination", "library", "hostel",
+        "placement", "placements", "scholarship",
+        "scholarships", "college", "student",
+        "course", "courses", "education",
+        "mba", "bba", "bca", "b.tech", "university",
+        "semester", "syllabus", "faculty", "campus"
+    ]
 
-Your job is to answer ONLY questions related to:
-
-- Admissions
-- Fees
-- Examination
-- Library
-- Hostel
-- Placements
-- Scholarships
-- Academics
-- Courses
-- College facilities
-- Student services
-- Career guidance
-- MBA, BBA, BCA, B.Tech and other educational queries
-
-Rules:
-1. Give clear, simple and helpful answers.
-2. Use easy English.
-3. If the question is NOT related to education or student support, politely reply:
-
-"I'm an AI Student Support Chatbot. Please ask questions related to admissions, fees, examinations, library, hostel, placements, scholarships, academics or other student services."
-
-Student Question:
-{question}
-"""
+    if not any(word in question.lower() for word in allowed_topics):
+        return (
+            "🎓 I'm an AI Student Support Chatbot.\n\n"
+            "Please ask questions related to:\n"
+            "• Admissions\n"
+            "• Fees\n"
+            "• Examinations\n"
+            "• Library\n"
+            "• Hostel\n"
+            "• Placements\n"
+            "• Scholarships\n"
+            "• Courses\n"
+            "• Student Services"
+        )
 
     response = client.models.generate_content(
         model="gemini-3.5-flash",
-        contents=prompt
+        contents=question
     )
 
     return response.text
