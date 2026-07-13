@@ -36,16 +36,12 @@ if question:
     if api_key:
         try:
             client = setup_gemini(api_key)
-            answer = get_response(client, question)
 
-            # Save AI answer
-            st.session_state.messages.append(
-                {"role": "assistant", "content": answer}
-            )
+with st.spinner("🤖 Thinking..."):
+    answer = get_response(client, question)
 
-            st.success(answer)
+st.session_state.messages.append(
+    {"role": "assistant", "content": answer}
+)
 
-        except Exception as e:
-            st.error(f"Error: {e}")
-    else:
-        st.error("Gemini API key not found.")
+st.success(answer)
