@@ -28,7 +28,7 @@ st.sidebar.markdown("""
 - 🎓 Scholarships
 
 ---
-This chatbot is designed to help students with common college-related queries.
+This chatbot helps students with common college-related queries.
 """)
 
 if st.sidebar.button("🗑️ Clear Chat"):
@@ -69,18 +69,18 @@ with col1:
     st.info("📝 **Admissions**\n\nAdmission process and eligibility.")
 
 with col2:
-    st.info("💰 **Fees**\n\nFee structure and payment details.")
+    st.info("💰 **Fees**\n\nFee structure and payment information.")
 
 with col3:
-    st.info("📚 **Library**\n\nLibrary timings and facilities.")
+    st.info("📚 **Library**\n\nLibrary services and facilities.")
 
 with col4:
-    st.info("💼 **Placements**\n\nPlacements and internship support.")
+    st.info("💼 **Placements**\n\nPlacement and internship support.")
 
 st.divider()
 
 # ----------------------------
-# Display Previous Messages
+# Display Chat History
 # ----------------------------
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -106,6 +106,7 @@ if question:
     )
 
     if api_key:
+
         try:
             client = setup_gemini(api_key)
 
@@ -123,10 +124,26 @@ if question:
             )
 
         except Exception as e:
-            st.error(f"Error: {e}")
+
+            error_message = str(e)
+
+            if "429" in error_message or "RESOURCE_EXHAUSTED" in error_message:
+                st.warning(
+                    "⚠️ Daily AI usage limit reached. Please try again later."
+                )
+
+            elif "503" in error_message:
+                st.warning(
+                    "⚠️ AI service is temporarily busy. Please try again in a few minutes."
+                )
+
+            else:
+                st.error(
+                    "⚠️ Something went wrong. Please try again."
+                )
 
     else:
-        st.error("Gemini API key not found.")
+        st.error("⚠️ Gemini API key not found.")
 
 # ----------------------------
 # Footer
