@@ -1,44 +1,32 @@
 from google import genai
 import time
 
-
 def setup_gemini(api_key):
     return genai.Client(api_key=api_key)
 
-
 def get_response(client, question):
 
-    allowed_topics = [
-        "admission", "admissions",
-        "fee", "fees",
-        "exam", "examination",
-        "library",
-        "hostel",
-        "placement", "placements",
-        "scholarship", "scholarships",
-        "student", "students",
-        "college", "university",
-        "course", "courses",
-        "education", "academic", "academics",
-        "mba", "bba", "bca", "b.tech",
-        "semester", "faculty", "campus",
-        "syllabus", "attendance", "internship"
-    ]
+    prompt = f"""
+You are an AI Chatbot for Student Support Services.
 
-    question_lower = question.lower()
+Your role:
+- Answer only student support and college-related questions.
+- Topics include admissions, fees, examinations, library, hostel, placements, scholarships, courses, internships, academics and campus services.
+- If the user asks "Who are you?", reply that you are an AI Student Support Assistant.
+- If the question is about a specific college or university and the information is not available, politely ask the user to provide the institution's name.
+- If the question is outside student support (weather, sports, politics, movies, celebrities, jokes, coding, science, etc.), politely reply:
 
-    if not any(topic in question_lower for topic in allowed_topics):
-        return (
-            "🎓 I am an AI Student Support Chatbot.\n\n"
-            "Please ask questions related to admissions, fees, examinations, "
-            "library, hostel, placements, scholarships, courses or other student services."
-        )
+"I am an AI Student Support Assistant. I can only answer questions related to admissions, fees, examinations, library, hostel, placements, scholarships, and other student support services."
+
+User Question:
+{question}
+"""
 
     for _ in range(3):
         try:
             response = client.models.generate_content(
-                model="gemini-3.5-flash",
-                contents=question
+                model="gemini-2.5-flash",
+                contents=prompt
             )
             return response.text
 
@@ -48,4 +36,4 @@ def get_response(client, question):
                 continue
             raise
 
-    return "⚠️ Gemini is currently busy. Please try again after a few moments."
+    return "⚠️ The service is temporarily unavailable. Please try again later."
