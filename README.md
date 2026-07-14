@@ -1,57 +1,150 @@
-# AI Chatbot for Student Support Services
+# 🎓 AI Chatbot for Student Support Services
 
-## Overview
+## 📖 Project Overview
 
-AI Chatbot for Student Support Services is a web-based application developed using Python and Streamlit. The chatbot helps students by answering common queries related to admissions, fees, examinations, library, hostel, placements, and scholarships.
+The **AI Chatbot for Student Support Services** is an AI-powered web application developed using **Python**, **Streamlit**, and the **Google Gemini API**.
 
-## Objectives
+The chatbot is designed to assist students by answering college-related questions such as admissions, fees, examinations, library services, hostel facilities, placements, scholarships, and other student support queries.
+
+To keep the chatbot focused, it politely declines unrelated questions and encourages users to ask only student support related queries.
+
+---
+
+# 🎯 Objectives
 
 - Provide instant support to students.
-- Reduce repetitive queries.
+- Reduce repetitive administrative queries.
 - Improve access to college-related information.
-- Demonstrate the use of Artificial Intelligence in student support.
+- Demonstrate the practical use of Artificial Intelligence in education.
+- Build an easy-to-use chatbot interface.
 
-## Features
+---
 
-- Admission Information
-- Fee Details
-- Examination Support
-- Library Information
-- Hostel Queries
-- Placement Guidance
-- Scholarship Information
-- User-Friendly Interface
+# ✨ Features
 
-## Technologies Used
+- 🤖 AI-powered chatbot using Google Gemini
+- 📝 Admission guidance
+- 💰 Fee information
+- 📖 Examination support
+- 📚 Library information
+- 🏠 Hostel assistance
+- 💼 Placement guidance
+- 🎓 Scholarship information
+- 💬 Chat history
+- 🗑️ Clear Chat option
+- 📋 Professional sidebar with available services
+- 🚫 Politely rejects unrelated questions
+- ⚡ Fast and responsive interface
+
+---
+
+# 🛠️ Technologies Used
 
 - Python
 - Streamlit
-- Google Gemini AI (to be integrated)
+- Google Gemini API
 - GitHub
 
-## Project Structure
+---
+
+# 📁 Project Structure
 
 ```
 AI-Chatbot-for-Student-Support-Services/
-│── app.py
-│── requirements.txt
-│── README.md
+│
+├── app.py
+├── chatbot.py
+├── requirements.txt
+├── README.md
+└── test.py
 ```
 
-## Future Improvements
+---
 
-- Google Gemini AI Integration
-- Voice Support
-- Student Login
-- Chat History
-- Database Integration
+# 🚀 Installation
 
-## Developer
+### Clone the repository
+
+```bash
+git clone https://github.com/azimabbas0101-source/AI-Chatbot-for-Student-Support-Services.git
+```
+
+### Go to the project folder
+
+```bash
+cd AI-Chatbot-for-Student-Support-Services
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Add your Gemini API Key
+
+Create a `.env` file and add:
+
+```text
+GEMINI_API_KEY=YOUR_API_KEY
+```
+
+Or configure the environment variable in Streamlit Cloud.
+
+### Run the project
+
+```bash
+streamlit run app.py
+```
+
+---
+
+# 💡 Sample Questions
+
+You can ask questions like:
+
+- What is the admission process?
+- What documents are required for admission?
+- What is the fee structure?
+- How can I pay my fees?
+- When are semester examinations conducted?
+- What are the library timings?
+- Is hostel accommodation available?
+- Which companies visit the campus?
+- How can I apply for a scholarship?
+
+---
+
+# 📸 Project Screenshots
+
+Project screenshots will be added after the final version is completed.
+
+---
+
+# 🔮 Future Improvements
+
+- Voice-based interaction
+- Multi-language support
+- Student login system
+- Database integration
+- College-specific knowledge base
+- Admin dashboard
+- PDF document support
+
+---
+
+# 👨‍💻 Developer
 
 **Azim Abbas**
 
-MBA Student
+MBA (Finance & Marketing)
 
-## Status
+Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM)
 
-Project Under Development
+IBM PBEL Internship Project
+
+---
+
+# 📌 Project Status
+
+✅ In Final Development and Testing
