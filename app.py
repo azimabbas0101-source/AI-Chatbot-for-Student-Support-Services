@@ -42,7 +42,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 # ----------------------------
-# Header
+# Main Title
 # ----------------------------
 st.title("🎓 AI Chatbot for Student Support Services")
 
@@ -51,13 +51,13 @@ Welcome to the **AI Student Support Assistant**.
 
 Ask questions related to:
 
-- 📝 Admissions
-- 💰 Fees
-- 📖 Examination
-- 📚 Library
-- 🏠 Hostel
-- 💼 Placements
-- 🎓 Scholarships
+- Admissions
+- Fees
+- Examinations
+- Library
+- Hostel
+- Placements
+- Scholarships
 """)
 
 # ----------------------------
@@ -87,7 +87,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # ----------------------------
-# User Input
+# Chat Input
 # ----------------------------
 question = st.chat_input("Ask your question...")
 
@@ -128,19 +128,29 @@ if question:
             error_message = str(e)
 
             if "429" in error_message or "RESOURCE_EXHAUSTED" in error_message:
-                st.warning(
-                    "⚠️ Daily AI usage limit reached. Please try again later."
-                )
+                st.warning("""
+⚠️ Daily AI Request Limit Reached
+
+The chatbot has reached today's free Gemini API quota.
+
+Please try again after the daily quota resets.
+""")
 
             elif "503" in error_message:
-                st.warning(
-                    "⚠️ AI service is temporarily busy. Please try again in a few minutes."
-                )
+                st.warning("""
+⚠️ AI Service Temporarily Busy
+
+Gemini is currently experiencing high traffic.
+
+Please try again after a few minutes.
+""")
 
             else:
-                st.error(
-                    "⚠️ Something went wrong. Please try again."
-                )
+                st.error(f"""
+⚠️ Unexpected Error
+
+{error_message}
+""")
 
     else:
         st.error("⚠️ Gemini API key not found.")
