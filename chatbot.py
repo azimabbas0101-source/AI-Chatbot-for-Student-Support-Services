@@ -121,7 +121,7 @@ User Question:
     for _ in range(3):
         try:
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-2.5-flash-preview",
                 contents=prompt
             )
 
