@@ -9,6 +9,11 @@ The chatbot is designed to assist students by answering college-related question
 To keep the chatbot focused, it politely declines unrelated questions and encourages users to ask only student support related queries.
 
 ---
+## 🌐 Live Demo
+
+Try the AI Chatbot here: https://ai-student-support-chatbot-azim.streamlit.app/
+
+---
 
 # 🎯 Objectives
 
@@ -46,7 +51,13 @@ To keep the chatbot focused, it politely declines unrelated questions and encour
 - GitHub
 
 ---
+## 🔗 Repository
 
+GitHub Repository:
+
+https://github.com/azimabbas0101-source/AI-Chatbot-for-Student-Support-Services
+
+---
 # 📁 Project Structure
 
 ```
@@ -117,7 +128,27 @@ You can ask questions like:
 
 # 📸 Project Screenshots
 
-Project screenshots will be added after the final version is completed.
+## 1. Home Page
+
+![Home Page](home-page.png)
+
+---
+
+## 2. Chatbot Greeting
+
+![Greeting](greeting.png)
+
+---
+
+## 3. Student Support Query
+
+![Student Support Query](student-query.png)
+
+---
+
+## 4. Out-of-Scope Query
+
+![Out-of-Scope Query](out-of-scope.png)
 
 ---
 
@@ -143,8 +174,12 @@ Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM)
 
 IBM PBEL Internship Project
 
+LinkedIn:
+
+GitHub: 
+
 ---
 
 # 📌 Project Status
 
-✅ In Final Development and Testing
+✅ Completed and Successfully Deployed 
