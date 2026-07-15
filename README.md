@@ -1,5 +1,5 @@
 # 🎓 AI Chatbot for Student Support Services
-
+home-page.png
 ## 📖 Project Overview
 
 The **AI Chatbot for Student Support Services** is an AI-powered web application developed using **Python**, **Streamlit**, and the **Google Gemini API**.
