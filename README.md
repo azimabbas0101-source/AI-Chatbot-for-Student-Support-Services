@@ -186,3 +186,8 @@ GitHub: https://github.com/azimabbas0101-source
 # 📌 Project Status
 
 ✅ Completed and Successfully Deployed 
+---
+
+# 📄 License
+
+This project was developed for the IBM PBEL Internship Program and is intended for educational purposes.
