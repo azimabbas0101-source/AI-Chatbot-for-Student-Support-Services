@@ -57,9 +57,7 @@ Try the AI Chatbot here: https://ai-student-support-chatbot-azim.streamlit.app/
 ---
 ## 🔗 Repository
 
-GitHub Repository:
-
-https://github.com/azimabbas0101-source/AI-Chatbot-for-Student-Support-Services
+Sources Code: https://github.com/azimabbas0101-source/AI-Chatbot-for-Student-Support-Services
 
 ---
 # 📁 Project Structure
@@ -180,7 +178,7 @@ IBM PBEL Internship Project
 
 LinkedIn:https://www.linkedin.com/in/
 
-GitHub: https://github.com/azimabbas0101-source/AI-Chatbot-for-Student-Support-Services
+GitHub: https://github.com/azimabbas0101-source
 
 
 ---
