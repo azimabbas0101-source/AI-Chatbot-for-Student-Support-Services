@@ -174,9 +174,10 @@ Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM)
 
 IBM PBEL Internship Project
 
-LinkedIn:
+LinkedIn:https://www.linkedin.com/in/
 
-GitHub: 
+GitHub: https://github.com/azimabbas0101-source/AI-Chatbot-for-Student-Support-Services
+
 
 ---
 
