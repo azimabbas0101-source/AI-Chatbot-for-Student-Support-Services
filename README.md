@@ -71,7 +71,7 @@ AI-Chatbot-for-Student-Support-Services/
 ├── chatbot.py
 ├── requirements.txt
 ├── README.md
-└── test.py
+
 ```
 
 ---
