@@ -1,6 +1,6 @@
 # 🎓 AI Chatbot for Student Support Services
 
-![AI Chatbot Home Page](home-page.png)
+<img width="1920" height="1080" alt="home-page png" src="https://github.com/user-attachments/assets/fff60557-6afe-4771-995f-6e7976bd0f1a" />
 
 > **An AI-powered chatbot built using Python, Streamlit, and Google Gemini API to assist students with admissions, fees, examinations, library, hostel, placements, scholarships, and other student support services.**
 
@@ -132,25 +132,27 @@ You can ask questions like:
 
 ## 1. Home Page
 
-![Home Page](home-page.png)
+<img width="1920" height="1080" alt="home-page png" src="https://github.com/user-attachments/assets/fff60557-6afe-4771-995f-6e7976bd0f1a" />
 
 ---
 
 ## 2. Chatbot Greeting
 
-![Greeting](greeting.png)
+<img width="1920" height="1080" alt="greeting png" src="https://github.com/user-attachments/assets/58e1da91-2d6e-4efe-a4de-2671c6adbe95" />
 
 ---
 
 ## 3. Student Support Query
 
-![Student Support Query](student-query.png)
+<img width="1920" height="1080" alt="student-query png" src="https://github.com/user-attachments/assets/52174a91-b35a-4383-983f-506832246a68" />
+
 
 ---
 
 ## 4. Out-of-Scope Query
 
-![Out-of-Scope Query](out-of-scope.png)
+<img width="1920" height="1080" alt="out-of-scope png" src="https://github.com/user-attachments/assets/182f5634-e1bf-49a0-8c75-995147d6d0d0" />
+
 
 ---
 
